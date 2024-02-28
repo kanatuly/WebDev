@@ -1,0 +1,5 @@
+
+
+<div>
+  <app-product-item *ngFor="let product of products" [product]="product" (removeProduct)="onRemove(product)" (likeProduct)="onLike(product)"></app-product-item>
+</div>

@@ -1,0 +1,14 @@
+<div *ngIf="product">
+  <img [src]="product.image" width="150px">
+  <h3>{{ product.name }}</h3>
+  <p>{{ product.description }}</p>
+
+  <div>Price: {{ product.price }} tenge</div>
+  <div>Likes: {{ product.likes }} </div>
+
+  <button type="button" (click)="share(product.link)">
+    Share
+  </button>
+  <button (click)="onLike()">Like</button>
+  <button (click)="onRemove()">Remove</button>
+</div>

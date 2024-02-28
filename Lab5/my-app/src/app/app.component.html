@@ -1,0 +1,26 @@
+<app-top-bar></app-top-bar>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+
+<div>
+  <h1>Categories</h1>
+  <ul>
+    <li *ngFor="let category of categories" (click)="onSelectCategory(category)">
+      {{ category }}
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="selectedCategory">
+  <h2>{{ selectedCategory }} Products</h2>
+  <app-product-list [products]="products[selectedCategory]" (removeProduct)="removeProduct($event)" (likeProduct)="likeProduct($event)"></app-product-list>
+</div>
+
+
+<!--
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->
