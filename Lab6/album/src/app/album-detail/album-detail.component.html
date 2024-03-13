@@ -1,0 +1,11 @@
+<!-- album-detail.component.html -->
+<div>
+  <h2>Album Detail</h2>
+  <div *ngIf="album">
+    <p>Album ID: {{ album.id }}</p>
+    <p>Title: <input [(ngModel)]="editedTitle" /> <button (click)="saveChanges()">Save</button></p>
+    <p>UserID: {{ album.userId }}</p>
+    <p>Editable Input: {{ editedTitle }}</p>
+    <a [routerLink]="['/albums', album.id, 'photos']">Photos</a>
+  </div>
+</div>
